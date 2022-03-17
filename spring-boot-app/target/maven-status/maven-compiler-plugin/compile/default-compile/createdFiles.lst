@@ -1,0 +1,14 @@
+springbootapp/model/Message.class
+springbootapp/service/UserServiceImp.class
+springbootapp/config/SecurityConfig.class
+springbootapp/service/UserService.class
+springbootapp/SpringBootAppApplication.class
+springbootapp/ServletInitializer.class
+springbootapp/controller/PagesController.class
+springbootapp/model/Role.class
+springbootapp/controller/PagesRestController.class
+springbootapp/dao/UserDaoImp.class
+springbootapp/dao/UserDao.class
+springbootapp/model/User.class
+springbootapp/service/UserDetailsServiceImpl.class
+springbootapp/config/handler/LoginSuccessHandler.class
