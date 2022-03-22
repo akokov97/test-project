@@ -30,6 +30,10 @@ public class ListOfAds {
         this.linkToAd = linkToAd;
     }
 
+    public ListOfAds() {
+
+    }
+
 
     public void setId(Long id) {
         this.id = id;
