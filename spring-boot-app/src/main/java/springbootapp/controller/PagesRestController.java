@@ -1,6 +1,8 @@
 package springbootapp.controller;
 
 import springbootapp.model.User;
+import springbootapp.service.AdService;
+import springbootapp.service.MessageService;
 import springbootapp.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -10,6 +12,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
@@ -17,8 +20,13 @@ import java.util.List;
 public class PagesRestController {
 
     @Autowired
-
     private UserService userService;
+
+    @Autowired
+    private MessageService messageService;
+
+    @Autowired
+    private AdService adService;
 
     @GetMapping("/user")
     public User getUserInfo() {
@@ -64,4 +72,17 @@ public class PagesRestController {
     public void deleteUser(@PathVariable("id") Long id) {
         userService.deleteUser(id);
     }
+
+    @PostMapping("/main/ads")
+    public void createAd(@RequestParam("id") Long id,
+                      @RequestParam("name") String name,
+                      @RequestParam("text") String text,
+                      @RequestParam("picId") Long picId,
+                      @RequestParam("date") LocalDateTime localDateTime,
+                      @RequestParam("contacts") String contacts)
+    {
+        //adService.createAd(id, name, text, picId, localDateTime, contacts);
+    }
+
+
 }

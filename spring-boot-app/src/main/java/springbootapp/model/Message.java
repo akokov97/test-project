@@ -1,44 +1,38 @@
 package springbootapp.model;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
+@Data
 @Entity
 @Table(name = "message", schema = "pre_project_web")
 public class Message {
 
+    @Id
     private Long id;
 
-    @Getter
-    @Setter
     private LocalDateTime dateTime;
 
-    @Getter
-    @Setter
     private String text;
 
-    @Getter
-    @Setter
     private String sender;
 
-    @Getter
-    @Setter
     private String addressee;
 
-    @Setter
-    @Getter
+    @JoinColumn(name = "pic_id")
+    @Embedded
     private Picture pic;
 
-    public Message(LocalDateTime dateTime, String text, String sender, String addressee) {
+    public Message(LocalDateTime dateTime, String text, String sender, String addressee, Picture pic) {
         this.dateTime = dateTime;
         this.text = text;
         this.sender = sender;
         this.addressee = addressee;
+        this.pic = pic;
     }
 
     public Message() {

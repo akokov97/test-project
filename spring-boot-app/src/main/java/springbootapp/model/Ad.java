@@ -1,5 +1,6 @@
 package springbootapp.model;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -9,34 +10,22 @@ import javax.persistence.Table;
 import java.time.LocalDateTime;
 
 @Entity
-@Table
+@Table (name = "ad", schema = "pre_project_web")
+@Data
 public class Ad {
 
+    @Id
     private Long id;
-
-    @Getter
-    @Setter
     private String name;
-
-    @Getter
-    @Setter
     private String text;
-
-    @Getter
-    @Setter
-    private Picture pic;
-
-    @Getter
-    @Setter
+    private Long picId;
     private LocalDateTime date;
-
-    @Getter
-    @Setter
     private String contacts;
 
-    public Ad(String name, String text, LocalDateTime date, String contacts) {
+    public Ad(String name, String text, Long picId, LocalDateTime date, String contacts) {
         this.name = name;
         this.text = text;
+        this.picId = picId;
         this.date = date;
         this.contacts = contacts;
     }

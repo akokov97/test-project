@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.springframework.org/security/tags">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Messages</title>
+</head>
+<body>
+    <header id="top" class="header">
+        <div class="container-fluid bg-dark">
+            <div class="row">
+                <div class="col-lg-11 text-light">
+                    <span th:text="${user.getEmail()}" class="font-weight-bold"></span>
+                    with roles:
+                    <span th:text="${user.getRoleNames()}" id="headerRoles" class="font-weight-bold"></span>
+                </div>
+                <div class="col-lg-1 text-right">
+                    <form method="post" action="/logout">
+                        <a class="btn btn-dark" href="/logout" method="post">Logout</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+
+</body>
+</html>

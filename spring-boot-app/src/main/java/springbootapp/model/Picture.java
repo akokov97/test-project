@@ -1,13 +1,15 @@
 package springbootapp.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Lob;
-import javax.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
+
+import javax.persistence.*;
 
 @Entity
-@Table
+@Table (name = "picture", schema = "pre_project_web")
+@Embeddable
 public class Picture {
+
 
     private Long id;
 
